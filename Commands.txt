@@ -1,0 +1,74 @@
+To create a virtual environment. -m is telling python to run my module as a script. 
+
+python -m venv menv
+
+
+To activate the env
+menv\Scripts\activate
+
+To deactivate the env
+deactivate
+
+
+To see if we have any python packages installed in your env
+pip freeze
+
+To install Django
+py -m pip install Django==5.1.7
+
+
+To check pip version
+pip --version or pip -m
+
+To upgrade pip
+python -m pip install --upgrade pip
+
+
+To create a project in Django (watchname is the project name here)
+django-admin startproject watchmate
+
+The project is watchmate folder inside parent watchmate folder.
+The watchmate folder inside the parent watchmate folder has the settings and the main url. 
+To create anything like a feature or anything, we need to create an app. 
+
+
+To create an app (watchmate_app is the app name here)
+python manage.py startapp watchmate_app
+
+To run the server
+python manage.py runserver
+
+
+Include the apps created under 'INSTALLED_APPS' in settings.py file in project folder. We are doing this to make django 
+know that we have an app and use it to tell django these apps are included in the project. 
+
+To make migrations
+python manage.py migrate
+
+To create superuser
+python manage.py createsuperuser
+
+Superuser Details:
+Username: bharath
+Email: 
+Password: password
+
+
+Run the server again to go to access admin panel
+The address is {serverurl}/admin
+
+After creating a model, to make django know the model you have created and to make it create a model, you need to run migrations
+python manage.py makemigrations
+And then migrate them
+python manage.py migrate
+
+After the model is created, register the model in admin site
+Go to admin.py, import the Movie model and register it. 
+
+Create a view for the model. Import the model created and define a function to do a specific operation
+
+Create and an end point path in main project's url.py file and include the app's url.py module in it. 
+
+In the apps url.py file, create an end point and refer the end point to the created view and assign a name to it. 
+Remember to use single quotes (Example :  path('list/', movie_list, name='movie_list'),) for names. 
+
